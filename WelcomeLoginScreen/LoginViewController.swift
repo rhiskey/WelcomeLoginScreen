@@ -44,11 +44,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
-        
     }
     
     @IBAction func loginButtonTouched() {
-        // User and Password задать параметрами либо класса либо структуры, повторяющийся код
         guard let inputText = userNameTF.text, !inputText.isEmpty, inputText == userEntity.name else {
             showAlert(with: "Invalid login or password", and: "Please, enter correct login and password")
             return
@@ -91,7 +89,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
 }
 
 // MARK: - Alert
@@ -105,5 +102,3 @@ extension LoginViewController {
         present(alert, animated: true)
     }
 }
-
-
