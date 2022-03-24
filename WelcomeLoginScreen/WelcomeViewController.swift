@@ -19,14 +19,14 @@ class WelcomeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        setGradientBackground()
+        view.setGradientBackground()
         super.viewWillAppear(animated)
     }
     
-    @IBAction func logOutButtonPressed() {
-        dismiss(animated: true)
-    }
-    
+}
+
+// MARK: - Set BG Color
+extension UIView {
     func setGradientBackground() {
         let colorTop =  UIColor.blue.cgColor
         let colorBottom = UIColor.purple.cgColor
@@ -34,9 +34,8 @@ class WelcomeViewController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = self.view.bounds
+        gradientLayer.frame = bounds
         
-        self.view.layer.insertSublayer(gradientLayer, at:0)
+        layer.insertSublayer(gradientLayer, at:0)
     }
-    
 }
