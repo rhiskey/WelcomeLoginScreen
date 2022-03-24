@@ -14,6 +14,7 @@
 		5BBDA15927EB6F4F0052BDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDA15827EB6F4F0052BDEB /* Assets.xcassets */; };
 		5BBDA15C27EB6F4F0052BDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDA15A27EB6F4F0052BDEB /* LaunchScreen.storyboard */; };
 		5BFB329C27EB7A5800E7231A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB329B27EB7A5800E7231A /* WelcomeViewController.swift */; };
+		5BFB329E27ECF34200E7231A /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB329D27ECF34200E7231A /* UserClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5BBDA15D27EB6F4F0052BDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBDA16327EB6F850052BDEB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BFB329B27EB7A5800E7231A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5BFB329D27ECF34200E7231A /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				5BBDA15A27EB6F4F0052BDEB /* LaunchScreen.storyboard */,
 				5BBDA15D27EB6F4F0052BDEB /* Info.plist */,
 				5BFB329B27EB7A5800E7231A /* WelcomeViewController.swift */,
+				5BFB329D27ECF34200E7231A /* UserClass.swift */,
 			);
 			path = WelcomeLoginScreen;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFB329E27ECF34200E7231A /* UserClass.swift in Sources */,
 				5BBDA15427EB6F4F0052BDEB /* LoginViewController.swift in Sources */,
 				5BFB329C27EB7A5800E7231A /* WelcomeViewController.swift in Sources */,
 				5BBDA15027EB6F4F0052BDEB /* AppDelegate.swift in Sources */,
