@@ -58,3 +58,37 @@ And select the delegate item from the context menu:
 ![Context Menu delegate](https://alfa.swiftbook.ru/system/uploads/ckeditor/pictures/4888/_Users_debash_Library_Mobile_Documents_iCloud_md_obsidian_Documents_Zettelkasten_Images_DraggedImage-1_4.png)
 
 In this case, you do not need to assign the class as a delegate in the viewDidLoad method either.
+
+---
+### Part 2
+
+To store the username, password, and other information that should be displayed on the screen, you need to create a data model.
+
+Using UITabBarController make some more screens with interesting information about you and your hobbies (summary). Get creative with this process. Use at least three screens for this.
+
+To go to the welcome screen in the prepare(for:) method, you need to create an instance of the UITabBarController class. This instance contains an array of view controllers. To pass data to each view controller from an array, it must be iterated using a loop:
+
+```swift
+// MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabBarController = segue.destination as! UITabBarController
+        ...
+         for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                
+            }
+        }
+        ...
+    }
+```
+
+If the tab bar contains a view controller in conjunction with a navigation controller, then to access it, you must first create an instance of the UINavigationController class, and through it you can already access the view controller:
+
+```swift
+for viewController in viewControllers {
+    ...
+    } else if let navigationVC = viewController as? UINavigationController {
+        let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+    }
+}
+```
