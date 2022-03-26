@@ -17,35 +17,48 @@ class LoginViewController: UIViewController {
     @IBOutlet var logInButton: UIButton!
     
     // MARK: - Private properties
-    private var userEntity = User(name: "User", password: "Password")
+    private let userEntity = User.getUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 16
-
+        
         passwordTF.enablesReturnKeyAutomatically = true
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+
+        let tabBarController = segue.destination as! UITabBarController
         
-        welcomeVC.userNameValue = userNameTF.text
+        // Select all view controllers from tabBar
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userName = userEntity.person.firstName
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+                
+                aboutUserVC.tabBarItem.title = "\(userEntity.person.firstName) \(userEntity.person.lastName)"
+                aboutUserVC.title = "\(userEntity.person.firstName) \(userEntity.person.lastName)"
+
+                aboutUserVC.job = userEntity.person.job
+                aboutUserVC.hobby = userEntity.person.hobby
+                aboutUserVC.skills = userEntity.person.about
+            }
+        }
     }
     
     
     // MARK: - IBActions
     @IBAction func loginButtonTouched() {
-//        if userNameTF.text != userEntity.name || passwordTF.text != userEntity.password
-        guard let inputText = userNameTF.text, inputText == userEntity.name else {
-            showAlert(title: "Invalid login or password", message: "Please, enter correct login and password", textField: userNameTF)
-            return
-        }
-        
-        guard let inputText = passwordTF.text, inputText == userEntity.password else {
-            passwordTF.text = ""
-            showAlert(title: "Invalid login or password", message: "Please, enter correct login and password", textField: passwordTF)
-            return
+        if userNameTF.text != userEntity.name || passwordTF.text != userEntity.password {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password",
+                textField: passwordTF
+            )
         }
     }
     
@@ -67,7 +80,7 @@ extension LoginViewController {
     private func showAlert(title: String, message massage: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            //textField?.text = ""
+            textField?.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
@@ -86,7 +99,7 @@ extension LoginViewController: UITextViewDelegate {
             passwordTF.becomeFirstResponder()
         } else {
             loginButtonTouched()
-            performSegue(withIdentifier: "WelcomeShow", sender: nil)
+            performSegue(withIdentifier: "showWelcome", sender: nil)
         }
         return true
     }

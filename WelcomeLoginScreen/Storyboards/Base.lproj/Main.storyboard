@@ -48,7 +48,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="loginButtonTouched" destination="BYZ-38-t0r" eventType="touchUpInside" id="7rY-qC-md0"/>
-                                            <segue destination="ahs-t3-XIu" kind="presentation" identifier="WelcomeShow" modalPresentationStyle="fullScreen" id="WrC-u9-mvp"/>
+                                            <segue destination="ahs-t3-XIu" kind="presentation" identifier="showWelcome" modalPresentationStyle="fullScreen" id="WrC-u9-mvp"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9iX-gQ-HeG">
@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="85.714285714285708"/>
         </scene>
-        <!--Home-->
+        <!--Welcome-->
         <scene sceneID="bpo-ka-1eY">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="zcR-0W-Gqg" customClass="WelcomeViewController" customModule="WelcomeLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +121,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfG-UU-JFi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfG-UU-JFi">
                                 <rect key="frame" x="166" y="199" width="104" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
@@ -140,7 +140,7 @@
                             <constraint firstItem="dht-CT-qAl" firstAttribute="trailing" secondItem="dfG-UU-JFi" secondAttribute="trailing" constant="144" id="noj-1q-grp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="person.fill" catalog="system" id="On0-Sp-d3O"/>
+                    <tabBarItem key="tabBarItem" title="Welcome" image="house.fill" catalog="system" id="On0-Sp-d3O"/>
                     <navigationItem key="navigationItem" id="O6d-8g-IAA"/>
                     <connections>
                         <outlet property="welcomeLB" destination="jMH-d9-Rb6" id="Gmn-F9-RN4"/>
@@ -151,21 +151,95 @@
             </objects>
             <point key="canvasLocation" x="2703.1999999999998" y="85.714285714285722"/>
         </scene>
-        <!--View Controller-->
+        <!--About-->
         <scene sceneID="ug3-H8-bF5">
             <objects>
-                <viewController id="0gA-GQ-6OL" sceneMemberID="viewController">
+                <viewController id="0gA-GQ-6OL" customClass="AboutMeViewController" customModule="WelcomeLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3fq-LO-4Qs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Dd-R9-M9Q">
+                                <rect key="frame" x="173.5" y="432.5" width="67" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Be-XG-rsk">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <segue destination="7To-Gc-da0" kind="show" id="2WZ-de-Pih"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kiT-LI-bOY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Dd-R9-M9Q" firstAttribute="centerY" secondItem="3fq-LO-4Qs" secondAttribute="centerY" id="chu-uB-Zum"/>
+                            <constraint firstItem="6Dd-R9-M9Q" firstAttribute="centerX" secondItem="3fq-LO-4Qs" secondAttribute="centerX" id="ybK-FX-nHz"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PHo-bE-Ocv"/>
+                    <navigationItem key="navigationItem" title="About" id="PHo-bE-Ocv"/>
+                    <connections>
+                        <outlet property="moreBT" destination="1Be-XG-rsk" id="i0x-yB-ugl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDu-7b-o0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2703" y="858"/>
+            <point key="canvasLocation" x="2702.898550724638" y="857.8125"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="1kK-BG-o72">
+            <objects>
+                <viewController id="7To-Gc-da0" customClass="DetailsViewController" customModule="WelcomeLoginScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VIV-Py-quv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="str-MI-Lkf">
+                                <rect key="frame" x="16" y="323.5" width="382" height="249.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJv-b0-pLM">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLg-Fo-1v8">
+                                        <rect key="frame" x="0.0" y="37" width="39.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xj-Gd-IpW">
+                                        <rect key="frame" x="0.0" y="65.5" width="382" height="184"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper, lacus ac elementum commodo, sapien nisl pretium augue, in auctor nisi lacus id ipsum. Mauris posuere, quam pellentesque lacinia ullamcorper, nisl velit posuere metus, eget consectetur sapien massa id orci. Cras sed tellus gravida, varius quam sed, consequat ipsum. Nunc quis feugiat risus. Mauris velit lacus, tincidunt vel quam sed, condimentum commodo lacus. In dignissim hendrerit augue, sed ultricies tortor venenatis a. Vestibulum eget iaculis eros. Mauris lobortis quis velit quis dignissim.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rhV-Ob-1BX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="str-MI-Lkf" firstAttribute="leading" secondItem="rhV-Ob-1BX" secondAttribute="leading" constant="16" id="K7v-TQ-MW3"/>
+                            <constraint firstItem="str-MI-Lkf" firstAttribute="centerY" secondItem="VIV-Py-quv" secondAttribute="centerY" id="c3F-No-Bk4"/>
+                            <constraint firstItem="rhV-Ob-1BX" firstAttribute="trailing" secondItem="str-MI-Lkf" secondAttribute="trailing" constant="16" id="uRs-d8-XGz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="YCB-yy-smz"/>
+                    <connections>
+                        <outlet property="hobbyLB" destination="3xj-Gd-IpW" id="Md6-b5-sgy"/>
+                        <outlet property="jobLB" destination="uJv-b0-pLM" id="CIX-kB-UyY"/>
+                        <outlet property="skillsLB" destination="oLg-Fo-1v8" id="c0M-0P-fx9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9a-4h-KWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3428" y="858"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Yic-3a-5Yz">
@@ -173,9 +247,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ahs-t3-XIu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9UL-kg-Qy4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="tintColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="zcR-0W-Gqg" kind="relationship" relationship="viewControllers" id="KcJ-Xv-HFA"/>
@@ -186,11 +261,11 @@
             </objects>
             <point key="canvasLocation" x="1760.8" y="85.714285714285722"/>
         </scene>
-        <!--Info-->
+        <!--User-->
         <scene sceneID="tqE-qE-ICm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zmQ-rz-8CD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" image="info.circle.fill" catalog="system" id="CQ6-Ba-RdI"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" badgeValue="1" id="CQ6-Ba-RdI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZVz-kQ-tEl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -207,10 +282,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
