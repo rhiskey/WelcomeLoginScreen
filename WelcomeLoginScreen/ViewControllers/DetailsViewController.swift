@@ -13,15 +13,21 @@ class DetailsViewController: UIViewController {
     @IBOutlet var hobbyLB: UILabel!
     @IBOutlet var skillsLB: UILabel!
     
-    var job = ""
-    var hobby = ""
-    var skills = ""
+    @IBOutlet var imageIV: UIImageView! {
+        didSet {
+            imageIV.layer.cornerRadius = imageIV.frame.height / 2
+        }
+    }
+    
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        jobLB.text = job
-        hobbyLB.text = hobby
-        skillsLB.text = skills
+        jobLB.text = user.person.job
+        hobbyLB.text = user.person.hobby
+        skillsLB.text = user.person.about
+        
+        imageIV.image = UIImage(named: user.person.image)
     }
     
 

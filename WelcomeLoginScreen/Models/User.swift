@@ -17,13 +17,7 @@ struct User {
         User(
             name: "User",
             password: "Password",
-            person: Person(
-                firstName: "Vladimir",
-                lastName: "Kiselev",
-                hobby: "I love music! I love snowboarding, playing games and write code!",
-                about: "iOS Developer, Data Engineer",
-                job: "Freelancer"
-            )
+            person: Person.getPerson()
         )
     }
 }
@@ -34,4 +28,20 @@ struct Person {
     let hobby: String
     let about: String
     let job: String
+    let image: String
+    
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
+    
+    static func getPerson() -> Person {
+        Person(
+            firstName: "Vladimir",
+            lastName: "Kiselev",
+            hobby: "I love music! I love snowboarding, playing games and write code!",
+            about: "iOS Developer, Data Engineer",
+            job: "Freelancer",
+            image: "UserImage"
+        )
+    }
 }

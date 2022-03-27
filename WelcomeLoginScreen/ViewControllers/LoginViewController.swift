@@ -28,24 +28,15 @@ class LoginViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        let tabBarController = segue.destination as! UITabBarController
-        
-        // Select all view controllers from tabBar
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarController.viewControllers else { return }
         
-        for viewController in viewControllers {
-            if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userName = userEntity.person.firstName
-            } else if let navigationVC = viewController as? UINavigationController {
+        viewControllers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = userEntity
+            } else if let navigationVC = $0 as? UINavigationController {
                 let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
-                
-                aboutUserVC.tabBarItem.title = "\(userEntity.person.firstName) \(userEntity.person.lastName)"
-                aboutUserVC.title = "\(userEntity.person.firstName) \(userEntity.person.lastName)"
-
-                aboutUserVC.job = userEntity.person.job
-                aboutUserVC.hobby = userEntity.person.hobby
-                aboutUserVC.skills = userEntity.person.about
+                aboutUserVC.user = userEntity
             }
         }
     }
