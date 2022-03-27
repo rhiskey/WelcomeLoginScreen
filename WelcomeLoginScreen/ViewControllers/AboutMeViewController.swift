@@ -19,6 +19,8 @@ class AboutMeViewController: UIViewController {
         moreBT.setTitle("More Info", for: .normal)
         tabBarItem.title = user.person.fullName
         title = user.person.fullName
+        
+        //performSegue(withIdentifier: "showDetails", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,5 +29,7 @@ class AboutMeViewController: UIViewController {
         guard let detailsVC = viewController as? DetailsViewController else { return }
         detailsVC.user = user
     }
+    
+
 
 }

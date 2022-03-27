@@ -14,6 +14,7 @@
 		5BBDA15727EB6F4F0052BDEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDA15527EB6F4F0052BDEB /* Main.storyboard */; };
 		5BBDA15927EB6F4F0052BDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDA15827EB6F4F0052BDEB /* Assets.xcassets */; };
 		5BBDA15C27EB6F4F0052BDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBDA15A27EB6F4F0052BDEB /* LaunchScreen.storyboard */; };
+		5BCE4AEA27F094EB003CAA9E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE4AE927F094EB003CAA9E /* ResultsViewController.swift */; };
 		5BFB329C27EB7A5800E7231A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB329B27EB7A5800E7231A /* WelcomeViewController.swift */; };
 		5BFB329E27ECF34200E7231A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB329D27ECF34200E7231A /* User.swift */; };
 		5BFB32A527EF2EF800E7231A /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFB32A427EF2EF800E7231A /* AboutMeViewController.swift */; };
@@ -30,6 +31,7 @@
 		5BBDA15B27EB6F4F0052BDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BBDA15D27EB6F4F0052BDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBDA16327EB6F850052BDEB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5BCE4AE927F094EB003CAA9E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		5BFB329B27EB7A5800E7231A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5BFB329D27ECF34200E7231A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BFB32A427EF2EF800E7231A /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				5BFB329B27EB7A5800E7231A /* WelcomeViewController.swift */,
 				5BFB32A427EF2EF800E7231A /* AboutMeViewController.swift */,
 				5BBB927B27EF94F60070423A /* DetailsViewController.swift */,
+				5BCE4AE927F094EB003CAA9E /* ResultsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				5BBB927C27EF94F60070423A /* DetailsViewController.swift in Sources */,
 				5BFB32A527EF2EF800E7231A /* AboutMeViewController.swift in Sources */,
 				5BBDA15227EB6F4F0052BDEB /* SceneDelegate.swift in Sources */,
+				5BCE4AEA27F094EB003CAA9E /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
